@@ -34,7 +34,7 @@
 
 \section[Place'n'Route]{}
 
-\begin{frame}{Tools}
+\begin{frame}{Open Source Tools}
 	\begin{itemize}
         \setlength\itemsep{1em}
 		\item graywolf origins in timberwolf
@@ -46,12 +46,21 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{graywolf}
+	\begin{itemize}
+        \setlength\itemsep{1em}
+		\item Originates in Academia: TimberWolf
+		\item Simulated annealing
+		\item Inline syscalls
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{Tools}
 	\begin{itemize}
         \setlength\itemsep{1em}
-		\item different tool sets like cadence, alliance, etc
-		\item similar capabilities with respect to silicon
-		\item open source tools are insufficient, except yosys
+		\item Different tool sets like BonnRoute, Cadence, alliance, etc
+		\item Similar capabilities with respect to silicon
+		\item Open source tools are insufficient, except yosys
 	\end{itemize}
 \end{frame}
 
@@ -77,6 +86,33 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Divide and Conquer}
+	\begin{itemize}
+        \setlength\itemsep{2em}
+            \item Academia + Industry:
+	    \begin{itemize}
+            \setlength\itemsep{1em}
+		\item Placement and Routing are different problems
+		\item All components map to the same problem
+	    \end{itemize}
+            \item LibreSilicon:
+	    \begin{itemize}
+            \setlength\itemsep{1em}
+		\item Placement and Routing are the same problem
+		\item Different components map to different problems
+	    \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Parallelism}
+	\begin{itemize}
+        \setlength\itemsep{1em}
+		\item QRouter: None 
+		\item BonnRoute: Concurrency + Shared memory model
+		\item LSC: map + reduce
+	\end{itemize}
+\end{frame}
+
 \section[Decomposition]{}
 \begin{frame}{Subcell hierarchies}
 	\begin{itemize}
@@ -88,6 +124,11 @@
 \end{frame}
 
 \begin{frame}{High modularization}
+       \begin{figure}
+        \centering
+        \includegraphics[scale=0.42]{SystemBus.png}
+       \end{figure}
+
 	\begin{itemize}
         \setlength\itemsep{1em}
 		\item Example of a *very* modular chip
@@ -100,6 +141,7 @@
 		\item Proof of concept: picorv
 	\end{itemize}
 \end{frame}
+
 
 \section[SMT]{}
 \begin{frame}{SMT2}
