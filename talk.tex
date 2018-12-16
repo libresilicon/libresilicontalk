@@ -28,12 +28,9 @@
 \begin{frame}{Open Source Tools}
 	\begin{itemize}
         \setlength\itemsep{1em}
-		\item graywolf origins in timberwolf
-		\item graywolf simulated annealing
-		\item graywolf inline syscalls
-		\item qrouter purpose and scope
-		\item qrouter sequential routing
-		\item qrouter formal correctness, esp libresilicon tech
+		\item graywolf
+		\item qrouter
+		\item several FPGA routers
 	\end{itemize}
 \end{frame}
 
@@ -42,7 +39,32 @@
         \setlength\itemsep{1em}
 		\item Originates in Academia: TimberWolf
 		\item Simulated annealing
+	        \begin{itemize}
+		    \item Meta heuristic that is useful not only for placement
+	        \end{itemize}
 		\item Inline syscalls
+	        \begin{itemize}
+		    \item This is just a bad idea
+	        \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{qrouter}
+	\begin{itemize}
+        \setlength\itemsep{1em}
+		\item Started in 2011 by Tim Edwards 
+		\item Widely used for FPGA
+	        \begin{itemize}
+		    \item Not ready for silicon
+	        \end{itemize}
+		\item Sequential routing
+	        \begin{itemize}
+		    \item Parallelism not in scope
+	        \end{itemize}
+		\item Difficult to prove formal correctness
+	        \begin{itemize}
+		    \item Prove that C implementation of Rip-up and Re-route is correct
+	        \end{itemize}
 	\end{itemize}
 \end{frame}
 
@@ -51,7 +73,7 @@
         \setlength\itemsep{1em}
 		\item Different tool sets like BonnRoute, Cadence, alliance, etc
 		\item Similar capabilities with respect to silicon
-		\item Just throw man power at large chips - what is automation?
+		\item Just throw man-power at VLSI --- what is automation?
 	\end{itemize}
 \end{frame}
 
@@ -98,9 +120,9 @@
 \begin{frame}{Parallelism}
 	\begin{itemize}
         \setlength\itemsep{1em}
-		\item QRouter: None 
-		\item BonnRoute: Concurrency + Shared memory model
-		\item LSC: map + reduce
+		\item BonnRoute: concurrency + shared memory model
+		\item qrouter: none 
+		\item lsc: map + reduce
 	\end{itemize}
 \end{frame}
 
