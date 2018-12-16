@@ -6,6 +6,18 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{
+	arrows,
+	automata,
+        shadings,
+        shadows,
+        shapes,
+}
+
+\input{global_color_scheme.tex}
+\input{tikz_process_steps/contsts.tex}
+
 \author{leviathanch | chipforge | foshardware \ (Lanceville Technology)}
 \title{Breaking the microchip monopoly}
 \setbeamercovered{transparent} 
@@ -102,6 +114,36 @@
         \setlength\itemsep{1em}
 		\item Show routing related problem in integer programming
 	\end{itemize}
+\end{frame}
+
+\section[Process]{}
+
+\begin{frame}{Features}
+	\begin{itemize}
+        \setlength\itemsep{1em}
+		\item MOSFETs
+		\item LDMOSFETs (High voltage) 
+		\item BJTs
+		\item Zener polysilicon diodes
+		\item SONOS flash cells
+		\item Poly silicon resistors
+		\item Metal caps
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Cross section}
+\begin{center}
+	\begin{tikzpicture}[node distance = 3cm, auto, thick,scale=0.2, every node/.style={transform shape}]
+		\input{tikz_process_steps/glass.a.tex}
+		\node at (5,-0.5) {\textbf{\huge{PMOS}}};
+		\node at (13,-0.5) {\textbf{\huge{NMOS}}};
+		\node at (22,-0.5) {\textbf{\huge{SONOS flash cell (PMOS)}}};
+		\node at (30,-0.5) {\textbf{\huge{NPN BJT}}};
+		\node at (38,-0.5) {\textbf{\huge{PNP BJT}}};
+		\node at (46,-0.5) {\textbf{\huge{Polysilicon diode}}};
+		\node at (52,-0.5) {\textbf{\huge{Polyresistor}}};
+	\end{tikzpicture}
+\end{center}
 \end{frame}
 
 \end{document}
