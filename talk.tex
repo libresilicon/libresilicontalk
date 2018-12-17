@@ -92,7 +92,13 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{State of the Art}
+{ 
+\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight,width=\paperwidth]{images/VLSI01.jpg}} 
+\begin{frame}[plain] 
+\end{frame} 
+} 
+
+\begin{frame}{Routing: State of the Art}
 	\begin{itemize}
         \setlength\itemsep{1em}
 		\item Place components for a large chip
@@ -103,7 +109,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Proposed}
+\begin{frame}{Routing: Proposed}
 	\begin{itemize}
         \setlength\itemsep{1em}
 		\item Decomposition for a large chip
@@ -115,42 +121,32 @@
 \end{frame}
 
 \begin{frame}{Divide and Conquer}
-	\begin{itemize}
-        \setlength\itemsep{2em}
-            \item Academia + Industry:
+	    \textbf{Academia + Industry:}
 	    \begin{itemize}
-            \setlength\itemsep{1em}
 		\item Placement and Routing are different problems
 		\item All components map to the same problem
 	    \end{itemize}
-            \item LibreSilicon:
+	    \textbf{LibreSilicon:}
 	    \begin{itemize}
-            \setlength\itemsep{1em}
 		\item Placement and Routing are the same problem
 		\item Different components map to different problems
 	    \end{itemize}
-	\end{itemize}
 \end{frame}
 
-\begin{frame}{Definition of the Routing Hierarchy}
-	\begin{itemize}
-        \setlength\itemsep{2em}
-            \item Academia + Industry:
+\begin{frame}{Routing Hierarchy}
+	    \textbf{Academia + Industry:}
 	    \begin{itemize}
-            \setlength\itemsep{1em}
-		\item Geographical partitioning of a wafer: cut tree
-		\item Based on preceeding floorplanning steps
+		\item Geographical partitioning of a wafer $\rightarrow$ \textit{cut tree}
+		\item Based on preceeding placement steps
 	    \end{itemize}
-            \item LibreSilicon:
+	    \textbf{LibreSilicon:}
 	    \begin{itemize}
-            \setlength\itemsep{1em}
-		\item Modular chip development: subcell hierarchy
-		\item Nodes carry implicit subcells as well
+		\item Modular chip development $\rightarrow$ \textit{subcell hierarchy}
+		\item Subcells carry implicit and explicit subcells
 	    \end{itemize}
-	\end{itemize}
 \end{frame}
 
-\begin{frame}{Parallelism}
+\begin{frame}{Frontier: Parallelism}
 	\begin{itemize}
         \setlength\itemsep{1em}
 		\item BonnRoute: concurrency + shared memory model
@@ -169,10 +165,10 @@
 \end{frame}
 
 \begin{frame}{High modularization}
-       \begin{figure}
+        \begin{figure}
         \centering
-        \includegraphics[scale=0.32]{SystemBus.png}
-       \end{figure}
+        \includegraphics[scale=0.32]{images/SystemBus.png}
+        \end{figure}
 \end{frame}
 
 \begin{frame}{Exlining}
@@ -282,7 +278,7 @@
 		\item HPR 504 (normal etch)
 	\end{itemize}
 
-	\textbf{Factors to consider :}
+	\textbf{Factors to consider:}
 	\begin{itemize}
 		\item Thickness of FH 6400L and implantation energy are interlinked
 		\item Thickness of HPR 504 and etching time are interlinked (selectivity)
