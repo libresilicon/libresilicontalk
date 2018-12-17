@@ -107,7 +107,7 @@
 		\item Place components and route for small chips in parallel
 		\item Place abstract gates and route recursively
 		\item Formal correctness: Reduction from SMT
-		\item Formal style: Parallel/Functional code
+		\item Formal style: Parallel/Declarative code
 	\end{itemize}
 \end{frame}
 
@@ -125,6 +125,24 @@
             \setlength\itemsep{1em}
 		\item Placement and Routing are the same problem
 		\item Different components map to different problems
+	    \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Definition of the Routing Hierarchy}
+	\begin{itemize}
+        \setlength\itemsep{2em}
+            \item Academia + Industry:
+	    \begin{itemize}
+            \setlength\itemsep{1em}
+		\item Geographical partitioning of a wafer: cut tree
+		\item Based on preceeding floorplanning steps
+	    \end{itemize}
+            \item LibreSilicon:
+	    \begin{itemize}
+            \setlength\itemsep{1em}
+		\item Modular chip development: subcell hierarchy
+		\item Nodes carry implicit subcells as well
 	    \end{itemize}
 	\end{itemize}
 \end{frame}
@@ -150,7 +168,7 @@
 \begin{frame}{High modularization}
        \begin{figure}
         \centering
-        \includegraphics[scale=0.38]{SystemBus.png}
+        \includegraphics[scale=0.32]{SystemBus.png}
        \end{figure}
 \end{frame}
 
@@ -161,6 +179,16 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Minimizing Goals}
+	\begin{itemize}
+        \setlength\itemsep{1em}
+		\item Layout area
+		\item Maximum wire length 
+		\item Via count
+		\item Crossing number (computational)
+		\item Wire jogs (minor)
+	\end{itemize}
+\end{frame}
 
 \begin{frame}{SMT2}
 	\begin{itemize}
