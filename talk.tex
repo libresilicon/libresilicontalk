@@ -1,4 +1,4 @@
-\documentclass[9pt]{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usetheme{Warsaw}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -26,7 +26,6 @@
 \title{Breaking the microchip monopoly}
 \setbeamercovered{transparent} 
 \setbeamertemplate{navigation symbols}{} 
-\logo{lsa.png} 
 %\institute{} 
 %\date{} 
 \subject{A free semiconductor manufacturing standard}
@@ -94,11 +93,14 @@
 	\end{itemize}
 \end{frame}
 
-{ 
-\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight,width=\paperwidth]{images/VLSI01.jpg}} 
-\begin{frame}[plain] 
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+    \begin{center}
+        \includegraphics[height=\textheight]{images/VLSI01_rotated.jpg}
+    \end{center}
 \end{frame} 
-} 
+}
 
 \begin{frame}{Routing: State of the Art}
 	\begin{itemize}
@@ -256,7 +258,9 @@
 \end{frame}
 
 \begin{frame}{Combining in the LSC Semigroup}
-    overlap + net connect + another constraint
+    \begin{center}
+        overlap + net connect + another constraint
+    \end{center}
 \end{frame}
 
 \begin{frame}{Just stay here}
@@ -269,7 +273,7 @@
           , samples=123
           , domain=0:42
           , width=1.1\textwidth,
-          , height=0.7\textwidth
+          , height=0.55\textwidth
           ]
         \addplot[blue] {pow(2,x)} node[above]{};
         \end{axis}
@@ -312,13 +316,13 @@
 
 \begin{frame}{Process design considerations}
 \begin{center}
-\includegraphics[width=\textwidth]{images/breaking-bad.jpg}
+\includegraphics[height=0.8\textheight]{images/breaking-bad.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}{Process design considerations}
 \begin{center}
-\includegraphics[width=\textwidth]{images/deinnovation.png}
+\includegraphics[height=0.8\textheight]{images/innovation-hub-hamburg.jpg}
 \end{center}
 \end{frame}
 
@@ -339,9 +343,9 @@
 \end{frame}
 
 \begin{frame}{PearlRiver \cjkfont(珠江芯片一号)}
-\begin{center}
-\includegraphics[width=1.0\textwidth]{images/Screenshot_20181216_204924.png}
-\end{center}
+    \begin{center}
+        \includegraphics[height=0.8\textheight]{images/Screenshot_20181216_204924.png}
+    \end{center}
 \end{frame}
 
 \begin{frame}{PearlRiver \cjkfont(珠江芯片一号)}
@@ -356,7 +360,7 @@
 
 \begin{frame}{Photomask}
 \begin{center}
-\includegraphics[width=0.5\textwidth]{images/20181207_113845_Burst01.jpg}
+\includegraphics[height=0.8\textheight]{images/20181207_113845_Burst01.jpg}
 \end{center}
 \end{frame}
 
@@ -371,8 +375,8 @@
 
 \begin{frame}{Photo resist (HKUST)}
 \begin{center}
-\includegraphics[width=0.4\textwidth]{images/20181128_154907.jpg}
-\includegraphics[width=0.4\textwidth]{images/20181128_154911.jpg}
+\includegraphics[height=0.8\textheight]{images/20181128_154907.jpg}
+\includegraphics[height=0.8\textheight]{images/20181128_154911.jpg}
 \end{center}
 \end{frame}
 
@@ -392,15 +396,15 @@
 
 \begin{frame}{After exposure}
 \begin{center}
-\includegraphics[width=0.4\textwidth]{images/20181210_125830_Burst01.jpg}
-\includegraphics[width=0.4\textwidth]{images/20181210_125845.jpg}
+\includegraphics[height=0.8\textheight]{images/20181210_125830_Burst01.jpg}
+\includegraphics[height=0.8\textheight]{images/20181210_125845.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}{Alignment}
 \begin{center}
-\includegraphics[width=0.4\textwidth]{images/20181211_125918.jpg}
-\includegraphics[width=0.4\textwidth]{images/20181211_161801_Burst01.jpg}
+\includegraphics[height=0.8\textheight]{images/20181211_125918.jpg}
+\includegraphics[height=0.8\textheight]{images/20181211_161801_Burst01.jpg}
 \end{center}
 \end{frame}
 
