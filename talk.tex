@@ -179,6 +179,15 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Unconstrained Small Unified Silicon Problem}
+	\begin{itemize}
+        \setlength\itemsep{1em}
+		\item Components and nets $\rightarrow$ \textit{rectilinear geometries}
+		\item Components do not overlap
+		\item Nets overlap with their pins on components
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{Minimizing Goals}
 	\begin{itemize}
         \setlength\itemsep{1em}
@@ -190,15 +199,49 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Know when you are screwed}
+\begin{frame}{Defining rectangular components}
+	\begin{tikzpicture}
+            \draw (0,-8) rectangle (4,-6);
+            \draw[fill=red]  (0,-8) circle (0.1);
+            \draw[fill=blue] (4,-6) circle (0.1);
+            \node at (0,-8.3) {(left, bottom)};
+            \node at (4,-5.7) {(right, top)};
+	\end{tikzpicture}
 \end{frame}
 
-\begin{frame}{SMT2}
-	\begin{itemize}
-        \setlength\itemsep{1em}
-		\item Show routing related problem in integer programming
-	\end{itemize}
+\begin{frame}{Overlaps}
+	\begin{tikzpicture}
+            \draw (0,-8) rectangle (4,-6);
+            \draw[fill=red]  (0,-8) circle (0.1);
+            \draw[fill=blue] (4,-6) circle (0.1);
+            \node at (0,-8.3) {(a.left, a.bottom)};
+            \node at (4,-5.7) {(a.right, a.top)};
+            
+            \draw (3,-9) rectangle (7,-7);
+            \draw[fill=red]  (3,-9) circle (0.1);
+            \draw[fill=blue] (7,-7) circle (0.1);
+            \node at (3,-9.3) {(b.left, b.bottom)};
+            \node at (7,-6.7) {(b.right, b.top)};
+	\end{tikzpicture}
 \end{frame}
+
+\begin{frame}{Reduction from SMT}
+        b.left > a.right
+    $\parallel$ a.bottom > b.top
+\end{frame}
+
+\begin{frame}{Combining in the LSC Semigroup}
+    overlap + net connect + another constraint
+\end{frame}
+
+\begin{frame}{Just stay here}
+    non-critical EXP
+\end{frame}
+
+\begin{frame}{Maximize yield}
+    Compiler versus. process
+\end{frame}
+
 
 \section[Process]{}
 
