@@ -15,6 +15,7 @@
         shapes,
 }
 
+\usepackage{pgfplots}
 \usepackage{fontspec}
 \newfontfamily\cjkfont{Noto Sans CJK SC} % Or any appropriate font you have
 
@@ -199,6 +200,30 @@
 	\end{itemize}
 \end{frame}
 
+\begin{frame}{Satisfiability Modulo Theories}
+	\begin{itemize}
+        \setlength\itemsep{1em}
+            \item Abstraction from Boolean satisfiability
+            \item Several solvers implement smtlib2
+	    \begin{itemize}
+                \item \textit{ABC} from University of Berkeley
+                \item \textit{CVC4} from Stanford
+                \item \textit{Boolector} from Johannes Kepler University
+                \item \textit{MathSAT} from Fondazione Bruno Kessler and DISI-University of Trento
+                \item \textit{Yices} from SRI
+                \item \textit{Z3} from Microsoft
+	    \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Boolean Satisfiability}
+    \begin{center}
+        $ ( \alpha_{1} \vee \alpha_{2} \vee \alpha_{3} )
+    \land ( \neg \alpha_{4} \vee \alpha_{5} \vee \alpha_{6} )
+        $
+    \end{center}
+\end{frame}
+
 \begin{frame}{Defining rectangular components}
 	\begin{tikzpicture}
             \draw (0,-8) rectangle (4,-6);
@@ -235,11 +260,28 @@
 \end{frame}
 
 \begin{frame}{Just stay here}
-    non-critical EXP
+    \begin{tikzpicture}
+        \begin{axis}
+          [ xticklabels={,,}
+          , yticklabels={,,}
+          , scaled ticks=false
+          , xmin=0,ymin=0
+          , samples=123
+          , domain=0:42
+          , width=1.1\textwidth,
+          , height=0.7\textwidth
+          ]
+        \addplot[blue] {pow(2,x)} node[above]{};
+        \end{axis}
+    \end{tikzpicture}
 \end{frame}
 
 \begin{frame}{Maximize yield}
-    Compiler versus. process
+	\begin{itemize}
+        \setlength\itemsep{1em}
+		\item Minimize area of a chip $\rightarrow$ \textit{silicon compiler}
+		\item Minimize physical errors $\rightarrow$ \textbf{silicon process}
+	\end{itemize}
 \end{frame}
 
 
