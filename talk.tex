@@ -238,8 +238,8 @@
             \draw (0,-8) rectangle (4,-6);
             \draw[fill=red]  (0,-8) circle (0.1);
             \draw[fill=blue] (4,-6) circle (0.1);
-            \node at (0,-8.3) {(left, bottom)};
-            \node at (4,-5.7) {(right, top)};
+            \node at (0,-8.3) {$(left, bottom)$};
+            \node at (4,-5.7) {$(right, top)$};
 	\end{tikzpicture}
 \end{frame}
 
@@ -248,25 +248,35 @@
             \draw (0,-8) rectangle (4,-6);
             \draw[fill=red]  (0,-8) circle (0.1);
             \draw[fill=blue] (4,-6) circle (0.1);
-            \node at (0,-8.3) {(a.left, a.bottom)};
-            \node at (4,-5.7) {(a.right, a.top)};
+            \node at (0,-8.3) {$(a.left, a.bottom)$};
+            \node at (4,-5.7) {$(a.right, a.top)$};
             
             \draw (3,-9) rectangle (7,-7);
             \draw[fill=red]  (3,-9) circle (0.1);
             \draw[fill=blue] (7,-7) circle (0.1);
-            \node at (3,-9.3) {(b.left, b.bottom)};
-            \node at (7,-6.7) {(b.right, b.top)};
+            \node at (3,-9.3) {$(b.left, b.bottom)$};
+            \node at (7,-6.7) {$(b.right, b.top)$};
 	\end{tikzpicture}
 \end{frame}
 
 \begin{frame}{Reduction from SMT}
-        b.left > a.right
-    $\parallel$ a.bottom > b.top
+    \begin{center}
+        $ a.right - a.left = dimension.x  $ \\
+        $ b.right - b.left = dimension.y  $ \\
+
+        $ a.top - a.bottom = dimension.x $ \\
+        $ b.top - b.bottom = dimension.y $ \\~\\
+
+        $ \phantom{\lor}\phantom{xxx} b.left > a.right $ \\
+        $ \lor\phantom{tm} a.left > b.right $ \\
+        $ \lor a.bottom > b.top $ \\
+        $ \lor b.bottom > a.top $ \\
+    \end{center}
 \end{frame}
 
 \begin{frame}{Combining in the LSC Semigroup}
     \begin{center}
-        overlap + net connect + another constraint
+        overlaps + pin connect + arbitrary constraint
     \end{center}
 \end{frame}
 
