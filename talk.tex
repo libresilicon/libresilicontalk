@@ -16,6 +16,7 @@
 }
 
 \usepackage{pgfplots}
+\pgfplotsset{compat=1.16}
 \usepackage{fontspec}
 \newfontfamily\cjkfont{Noto Sans CJK SC} % Or any appropriate font you have
 
@@ -267,7 +268,7 @@
         $ a.top - a.bottom = dimension.x $ \\
         $ b.top - b.bottom = dimension.y $ \\~\\
 
-        $ \phantom{\lor}\phantom{xxx} b.left > a.right $ \\
+        $ \phantom{\lor}\phantom{tm} b.left > a.right $ \\
         $ \lor\phantom{tm} a.left > b.right $ \\
         $ \lor a.bottom > b.top $ \\
         $ \lor b.bottom > a.top $ \\
