@@ -1,4 +1,4 @@
-\documentclass[9pt]{beamer}
+\documentclass[aspectratio=169]{beamer}
 \usetheme{Warsaw}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -15,6 +15,7 @@
         shapes,
 }
 
+\usepackage{pgfplots}
 \usepackage{fontspec}
 \newfontfamily\cjkfont{Noto Sans CJK SC} % Or any appropriate font you have
 
@@ -25,7 +26,6 @@
 \title{Breaking the microchip monopoly}
 \setbeamercovered{transparent} 
 \setbeamertemplate{navigation symbols}{} 
-\logo{lsa.png} 
 %\institute{} 
 %\date{} 
 \subject{A free semiconductor manufacturing standard}
@@ -93,11 +93,14 @@
 	\end{itemize}
 \end{frame}
 
-{ 
-\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight,width=\paperwidth]{images/VLSI01.jpg}} 
-\begin{frame}[plain] 
+{
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}
+    \begin{center}
+        \includegraphics[height=\textheight]{images/VLSI01_rotated.jpg}
+    \end{center}
 \end{frame} 
-} 
+}
 
 \begin{frame}{Routing: State of the Art}
 	\begin{itemize}
@@ -168,8 +171,11 @@
 \begin{frame}{High modularization}
         \begin{figure}
         \centering
-        \includegraphics[scale=0.32]{images/SystemBus.png}
+        \includegraphics[scale=0.42]{images/SystemBus.png}
         \end{figure}
+        \begin{center}
+            \href{url}{\scalebox{0.5}{https://murmur.libresilicon.com/lsc/rocket-chip-yosys}}
+        \end{center}
 \end{frame}
 
 \begin{frame}{Exlining}
@@ -177,6 +183,9 @@
         \setlength\itemsep{1em}
 		\item Proof of concept: picorv
 	\end{itemize}
+        \begin{center}
+            \href{url}{\scalebox{0.5}{https://murmur.libresilicon.com/lsc/rocket-chip-exline}}
+        \end{center}
 \end{frame}
 
 \begin{frame}{Unconstrained Small Unified Silicon Problem}
@@ -197,6 +206,31 @@
 		\item Crossing number (computational)
 		\item Wire jogs (minor)
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Satisfiability Modulo Theories}
+	\begin{itemize}
+        \setlength\itemsep{1em}
+            \item Optimization problems
+            \item Abstraction from Boolean satisfiability
+            \item Several solvers implement smtlib2
+	    \begin{itemize}
+                \item \textit{ABC} from University of Berkeley
+                \item \textit{CVC4} from Stanford
+                \item \textit{Boolector} from Johannes Kepler University
+                \item \textit{MathSAT} from Fondazione Bruno Kessler and DISI-University of Trento
+                \item \textit{Yices} from SRI
+                \item \textit{Z3} from Microsoft
+	    \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Boolean Satisfiability}
+    \begin{center}
+        $ ( \alpha_{1} \vee \alpha_{2} \vee \alpha_{3} )
+    \land ( \neg \alpha_{4} \vee \alpha_{5} \vee \alpha_{6} )
+        $
+    \end{center}
 \end{frame}
 
 \begin{frame}{Defining rectangular components}
@@ -231,15 +265,34 @@
 \end{frame}
 
 \begin{frame}{Combining in the LSC Semigroup}
-    overlap + net connect + another constraint
+    \begin{center}
+        overlap + net connect + another constraint
+    \end{center}
 \end{frame}
 
-\begin{frame}{Just stay here}
-    non-critical EXP
+\begin{frame}{Stay low}
+    \begin{tikzpicture}
+        \begin{axis}
+          [ xticklabels={,,}
+          , yticklabels={,,}
+          , scaled ticks=false
+          , xmin=0,ymin=0
+          , samples=123
+          , domain=0:42
+          , width=1.1\textwidth,
+          , height=0.55\textwidth
+          ]
+        \addplot[blue] {pow(2,x)} node[above]{};
+        \end{axis}
+    \end{tikzpicture}
 \end{frame}
 
 \begin{frame}{Maximize yield}
-    Compiler versus. process
+	\begin{itemize}
+        \setlength\itemsep{1em}
+		\item Minimize area of a chip $\rightarrow$ \textit{silicon compiler}
+		\item Minimize physical errors $\rightarrow$ \textbf{silicon process}
+	\end{itemize}
 \end{frame}
 
 
@@ -270,13 +323,13 @@
 
 \begin{frame}{Process design considerations}
 \begin{center}
-\includegraphics[width=\textwidth]{images/breaking-bad.jpg}
+\includegraphics[height=0.8\textheight]{images/breaking-bad.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}{Process design considerations}
 \begin{center}
-\includegraphics[width=\textwidth]{images/deinnovation.png}
+\includegraphics[height=0.8\textheight]{images/innovation-hub-hamburg.jpg}
 \end{center}
 \end{frame}
 
@@ -297,9 +350,9 @@
 \end{frame}
 
 \begin{frame}{PearlRiver \cjkfont(珠江芯片一号)}
-\begin{center}
-\includegraphics[width=1.0\textwidth]{images/Screenshot_20181216_204924.png}
-\end{center}
+    \begin{center}
+        \includegraphics[height=0.8\textheight]{images/Screenshot_20181216_204924.png}
+    \end{center}
 \end{frame}
 
 \begin{frame}{PearlRiver \cjkfont(珠江芯片一号)}
@@ -314,7 +367,7 @@
 
 \begin{frame}{Photomask}
 \begin{center}
-\includegraphics[width=0.5\textwidth]{images/20181207_113845_Burst01.jpg}
+\includegraphics[height=0.8\textheight]{images/20181207_113845_Burst01.jpg}
 \end{center}
 \end{frame}
 
@@ -329,8 +382,8 @@
 
 \begin{frame}{Photo resist (HKUST)}
 \begin{center}
-\includegraphics[width=0.4\textwidth]{images/20181128_154907.jpg}
-\includegraphics[width=0.4\textwidth]{images/20181128_154911.jpg}
+\includegraphics[height=0.8\textheight]{images/20181128_154907.jpg}
+\includegraphics[height=0.8\textheight]{images/20181128_154911.jpg}
 \end{center}
 \end{frame}
 
@@ -350,15 +403,15 @@
 
 \begin{frame}{After exposure}
 \begin{center}
-\includegraphics[width=0.4\textwidth]{images/20181210_125830_Burst01.jpg}
-\includegraphics[width=0.4\textwidth]{images/20181210_125845.jpg}
+\includegraphics[height=0.8\textheight]{images/20181210_125830_Burst01.jpg}
+\includegraphics[height=0.8\textheight]{images/20181210_125845.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}{Alignment}
 \begin{center}
-\includegraphics[width=0.4\textwidth]{images/20181211_125918.jpg}
-\includegraphics[width=0.4\textwidth]{images/20181211_161801_Burst01.jpg}
+\includegraphics[height=0.8\textheight]{images/20181211_125918.jpg}
+\includegraphics[height=0.8\textheight]{images/20181211_161801_Burst01.jpg}
 \end{center}
 \end{frame}
 
