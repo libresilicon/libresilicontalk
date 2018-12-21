@@ -6,6 +6,8 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{color, colortbl}
+\usepackage{xcolor}
 \usepackage{tikz}
 \usetikzlibrary{
 	arrows,
@@ -323,7 +325,7 @@
 
 \begin{frame}{Process design considerations}
 \begin{center}
-\includegraphics[height=0.8\textheight]{images/breaking-bad.jpg}
+\includegraphics[height=0.8\textheight]{images/breaking-bad.png}
 \end{center}
 \end{frame}
 
@@ -423,35 +425,112 @@
 
 \begin{frame}{Example: NOR3 ring oscillator}
 \begin{center}
-	\textbf{Metal interconnect (metal1):}
+	\textbf{Wells (nwell/pwell):}
 
-	\includegraphics[width=\textwidth]{images/Screenshot_20181219_184526.png}
+	\includegraphics[width=\textwidth]{images/Screenshot_20181221_124540.png}
 \end{center}
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
 \begin{center}
-	\textbf{Metal interconnect (metal1):}
+	\textbf{Wells (nwell/pwell):}
 
-	\includegraphics[width=0.25\textwidth]{images/20181218_115931.jpg}
-	\includegraphics[width=0.25\textwidth]{images/20181218_161016.jpg}
+	\includegraphics[width=0.25\textwidth]{images/20181214_125705.jpg}
 \end{center}
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
-	\textbf{Recipe for metal interconnects:}
-
+	\textbf{Recipe for nwell:}
 	\begin{itemize}
-		\item Make a vacuum (low pressure)
-		\item Deposit 100nm Aluminum
-		\item Deposit 30nm Titanium over the Aluminum
-		\item Take out of vacuum
-		\item Dip into HF:DI (1:10) water solution for a few seconds until Titanium is gone
-		\item Dip into FeCl3 or other suitable Aluminum etchant for around 30 seconds until Aluminum is gone
+		\item Coat with implant resist (soft bake 60 seconds, 110\textdegree{}C)
+		\item Expose nwell-mask
+		\item Puddle develop 69 seconds and hard bake 60 seconds at 120\textdegree{}C
+		\item Implant Phosphorus, $2.33 \times 10^{12} cm^{-2}$ @ 70keV
+		\item Strip resist with plasma asher or 20 minutes in 120\textdegree{}C hot sulfuric acid
 	\end{itemize}
-	
+	\textbf{Note:} Alternatively predisposition can be used
 \end{frame}
 
+\begin{frame}{Example: NOR3 ring oscillator}
+	\textbf{Recipe for pwell:}
+	\begin{itemize}
+		\item Coat with implant resist (soft bake 60 seconds, 110\textdegree{}C)
+		\item Expose pwell-mask
+		\item Puddle develop 69 seconds and hard bake 60 seconds at 120\textdegree{}C
+		\item Implant Boron, $1.93 \times 10^{12} cm^{-2}$ @ 40keV
+		\item Strip resist with plasma asher or 20 minutes in 120\textdegree{}C hot sulfuric acid
+		\item Diffuse both wells together for 4 hours at 1050\textdegree{}C in inert atmosphere ($N_2$) 
+	\end{itemize}
+	\textbf{Note:} Alternatively predisposition can be used
+\end{frame}
+
+\begin{frame}{The Fick's equation}
+\begin{center}
+	\begingroup
+	\huge
+	$\frac{\partial N}{\partial t} = D \cdot \frac{\partial^2 N}{\partial x^2}$
+	\endgroup
+\end{center}
+\end{frame}
+
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+
+\begin{frame}{The Fick's equation}
+\begin{center}
+	$x_l(t) = 2 \cdot \sqrt{D_e \cdot t} = 2 \cdot \sqrt{D_0 \cdot \exp\left(-\frac{E_a}{k \cdot T}\right) \cdot t}$ \\
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\textbf{Element} &
+		$D_0$ $\left[\frac{cm^2}{s}\right]$ &
+		$E_a$ $\left[eV\right]$ \\
+		\hline
+		\rowcolor{LightCyan}
+		P &
+		10.50 &
+		3.69 \\
+		\hline
+		As &
+		0.32 &
+		3.56 \\
+		\hline
+		Sb &
+		5.60 &
+		3.95 \\
+		\hline
+		\rowcolor{LightCyan}
+		B &
+		10.50 &
+		3.69 \\
+		\hline
+		Al &
+		8.00 &
+		3.47 \\
+		\hline
+		Ga &
+		3.60 &
+		3.51 \\
+		\hline
+		Cu &
+		0.0025 &
+		0.65 \\
+		\hline
+	\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{The Fick's equation}
+\begin{center}
+	\begingroup
+	\huge
+	$N(x,t)=\frac{Q}{\sqrt{\pi \cdot D_e \cdot t}} \cdot \exp\left(\frac{-x^2}{4 \cdot D_e \cdot t}\right)$
+	\endgroup
+\end{center}
+\end{frame}
+
+\begin{frame}{The Fick's equation}
+\begin{center}
+\end{center}
+\end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
 \begin{center}
@@ -487,4 +566,36 @@
 		\end{itemize}
 	\end{itemize}
 \end{frame}
+
+\begin{frame}{Example: NOR3 ring oscillator}
+\begin{center}
+	\textbf{Metal interconnect (metal1):}
+
+	\includegraphics[width=\textwidth]{images/Screenshot_20181219_184526.png}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example: NOR3 ring oscillator}
+\begin{center}
+	\textbf{Metal interconnect (metal1):}
+
+	\includegraphics[width=0.25\textwidth]{images/20181218_115931.jpg}
+	\includegraphics[width=0.25\textwidth]{images/20181218_161016.jpg}
+\end{center}
+\end{frame}
+
+\begin{frame}{Example: NOR3 ring oscillator}
+	\textbf{Recipe for metal interconnects:}
+
+	\begin{itemize}
+		\item Make a vacuum (low pressure)
+		\item Deposit 100nm Aluminum
+		\item Deposit 30nm Titanium over the Aluminum
+		\item Take out of vacuum
+		\item Dip into HF:DI (1:10) water solution for a few seconds until Titanium is gone
+		\item Dip into FeCl3 or other suitable Aluminum etchant for around 30 seconds until Aluminum is gone
+	\end{itemize}
+	
+\end{frame}
+
 \end{document}
