@@ -297,7 +297,6 @@
 	\end{itemize}
 \end{frame}
 
-
 \section[Process]{}
 
 \begin{frame}{Features}
@@ -324,31 +323,30 @@
 \end{frame}
 
 \begin{frame}{Process design considerations}
-\begin{center}
-\includegraphics[height=0.8\textheight]{images/breaking-bad.png}
-\end{center}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/breaking-bad.png}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Process design considerations}
-\begin{center}
-\includegraphics[height=0.8\textheight]{images/innovation-hub-hamburg.jpg}
-\end{center}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/innovation-hub-hamburg.jpg}
+	\end{center}
 \end{frame}
 
-
 \begin{frame}{Cross section}
-\begin{center}
-	\begin{tikzpicture}[node distance = 3cm, auto, thick,scale=0.2, every node/.style={transform shape}]
-		\input{tikz_process_steps/glass.a.tex}
-		\node at (5,-0.5) {\textbf{\huge{PMOS}}};
-		\node at (13,-0.5) {\textbf{\huge{NMOS}}};
-		\node at (22,-0.5) {\textbf{\huge{SONOS flash cell (PMOS)}}};
-		\node at (30,-0.5) {\textbf{\huge{NPN BJT}}};
-		\node at (38,-0.5) {\textbf{\huge{PNP BJT}}};
-		\node at (46,-0.5) {\textbf{\huge{Polysilicon diode}}};
-		\node at (52,-0.5) {\textbf{\huge{Polyresistor}}};
-	\end{tikzpicture}
-\end{center}
+	\begin{center}
+		\begin{tikzpicture}[node distance = 3cm, auto, thick,scale=0.2, every node/.style={transform shape}]
+			\input{tikz_process_steps/glass.a.tex}
+			\node at (5,-0.5) {\textbf{\huge{PMOS}}};
+			\node at (13,-0.5) {\textbf{\huge{NMOS}}};
+			\node at (22,-0.5) {\textbf{\huge{SONOS flash cell (PMOS)}}};
+			\node at (30,-0.5) {\textbf{\huge{NPN BJT}}};
+			\node at (38,-0.5) {\textbf{\huge{PNP BJT}}};
+			\node at (46,-0.5) {\textbf{\huge{Polysilicon diode}}};
+			\node at (52,-0.5) {\textbf{\huge{Polyresistor}}};
+		\end{tikzpicture}
+	\end{center}
 \end{frame}
 
 \begin{frame}{PearlRiver \cjkfont(珠江芯片一号)}
@@ -368,9 +366,9 @@
 \end{frame}
 
 \begin{frame}{Photomask}
-\begin{center}
-\includegraphics[height=0.8\textheight]{images/20181207_113845_Burst01.jpg}
-\end{center}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/20181207_113845_Burst01.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Photomask}
@@ -383,10 +381,10 @@
 \end{frame}
 
 \begin{frame}{Photo resist (HKUST)}
-\begin{center}
-\includegraphics[height=0.8\textheight]{images/20181128_154907.jpg}
-\includegraphics[height=0.8\textheight]{images/20181128_154911.jpg}
-\end{center}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/20181128_154907.jpg}
+		\includegraphics[height=0.8\textheight]{images/20181128_154911.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Photo resist (HKUST)}
@@ -519,25 +517,97 @@
 \end{frame}
 
 \begin{frame}{The Fick's equation}
-\begin{center}
-	\begingroup
-	\huge
-	$N(x,t)=\frac{Q}{\sqrt{\pi \cdot D_e \cdot t}} \cdot \exp\left(\frac{-x^2}{4 \cdot D_e \cdot t}\right)$
-	\endgroup
-\end{center}
+	\begin{center}
+		\begingroup
+		\huge
+		$N(x,t)=\frac{Q}{\sqrt{\pi \cdot D_e \cdot t}} \cdot \exp\left(\frac{-x^2}{4 \cdot D_e \cdot t}\right)$
+		\endgroup
+	\end{center}
 \end{frame}
 
 \begin{frame}{The Fick's equation}
-\begin{center}
-\end{center}
+	\begin{center}
+		For the concentration within the channel may $x=0$
+
+		This results in the concentration at the surface (around 100nm deep $\ll$ 2 microns)
+
+		$ N = \frac{Q}{\sqrt{\pi \cdot D_e \cdot t}} $
+
+		Or the implant dosage:
+
+		$ Q = N \cdot \sqrt{\pi \cdot D_e \cdot t} $
+	\end{center}
+\end{frame}
+
+\begin{frame}{The Fick's equation}
+	\begin{center}
+		Fixed source diffusion:
+
+		$ x_j = 2 \cdot\sqrt{D \cdot t \cdot \ln\left(\frac{N_0}{N_B}\right)} $
+
+		\includegraphics[width=0.25\textwidth]{images/well_formation1.png}
+		\includegraphics[width=0.25\textwidth]{images/well_formation2.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Threshold calculation}
+	\begin{center}
+		\textbf{PMOS}
+
+		\begin{equation}
+			\left| \phi_F \right| = V_T \ln\frac{N_d}{n_i}
+		\end{equation}
+
+		\begin{equation}
+			V_T
+			=
+			V_{FB}
+			-
+			2 \cdot \left| \phi_F \right|
+			-
+			\frac{
+			\sqrt{2 \cdot \epsilon_s \cdot 2 \cdot \left| \phi_F \right| \cdot q \cdot N_d }
+			}{C_{ox}}
+		\end{equation}
+
+		\begin{equation}
+			V_T = V_FB - abs{2 \phi_F}
+		\end{equation}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Threshold calculation}
+	\begin{center}
+		\textbf{NMOS}
+
+		\begin{equation}
+			\phi_F = V_T \ln\frac{N_a}{n_i}
+		\end{equation}
+
+		\begin{equation}
+			V_T
+			=
+			V_{FB}
+			-
+			2 \cdot \left| \phi_F \right|
+			-
+			\frac{
+			\sqrt{2 \cdot \epsilon_s \cdot 2 \cdot \left| \phi_F \right| \cdot q \cdot N_d }
+			}{C_{ox}}
+		\end{equation}
+
+		\begin{equation}
+			V_T = V_FB - abs{2 \phi_F}
+		\end{equation}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
-\begin{center}
-	\textbf{Isolation (STI):}
+	\begin{center}
+		\textbf{Isolation (STI):}
 
-	\includegraphics[width=\textwidth]{images/Screenshot_20181220_164222.png}
-\end{center}
+		\includegraphics[width=\textwidth]{images/Screenshot_20181220_164222.png}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
