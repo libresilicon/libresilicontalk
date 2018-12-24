@@ -20,7 +20,7 @@
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.16}
 \usepackage{fontspec}
-\newfontfamily\cjkfont{Noto Sans CJK SC} % Or any appropriate font you have
+\newfontfamily\cjkfont{Noto Serif SC Black} % Or any appropriate font you have
 
 \input{global_color_scheme.tex}
 \input{tikz_process_steps/contsts.tex}
@@ -308,7 +308,6 @@
 	\end{itemize}
 \end{frame}
 
-
 \section[Process]{}
 
 \begin{frame}{Features}
@@ -335,31 +334,30 @@
 \end{frame}
 
 \begin{frame}{Process design considerations}
-\begin{center}
-\includegraphics[height=0.8\textheight]{images/breaking-bad.png}
-\end{center}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/breaking-bad.png}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Process design considerations}
-\begin{center}
-\includegraphics[height=0.8\textheight]{images/innovation-hub-hamburg.jpg}
-\end{center}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/innovation-hub-hamburg.jpg}
+	\end{center}
 \end{frame}
 
-
 \begin{frame}{Cross section}
-\begin{center}
-	\begin{tikzpicture}[node distance = 3cm, auto, thick,scale=0.2, every node/.style={transform shape}]
-		\input{tikz_process_steps/glass.a.tex}
-		\node at (5,-0.5) {\textbf{\huge{PMOS}}};
-		\node at (13,-0.5) {\textbf{\huge{NMOS}}};
-		\node at (22,-0.5) {\textbf{\huge{SONOS flash cell (PMOS)}}};
-		\node at (30,-0.5) {\textbf{\huge{NPN BJT}}};
-		\node at (38,-0.5) {\textbf{\huge{PNP BJT}}};
-		\node at (46,-0.5) {\textbf{\huge{Polysilicon diode}}};
-		\node at (52,-0.5) {\textbf{\huge{Polyresistor}}};
-	\end{tikzpicture}
-\end{center}
+	\begin{center}
+		\begin{tikzpicture}[node distance = 3cm, auto, thick,scale=0.2, every node/.style={transform shape}]
+			\input{tikz_process_steps/glass.a.tex}
+			\node at (5,-0.5) {\textbf{\huge{PMOS}}};
+			\node at (13,-0.5) {\textbf{\huge{NMOS}}};
+			\node at (22,-0.5) {\textbf{\huge{SONOS flash cell (PMOS)}}};
+			\node at (30,-0.5) {\textbf{\huge{NPN BJT}}};
+			\node at (38,-0.5) {\textbf{\huge{PNP BJT}}};
+			\node at (46,-0.5) {\textbf{\huge{Polysilicon diode}}};
+			\node at (52,-0.5) {\textbf{\huge{Polyresistor}}};
+		\end{tikzpicture}
+	\end{center}
 \end{frame}
 
 \begin{frame}{PearlRiver \cjkfont(珠江芯片一号)}
@@ -379,9 +377,9 @@
 \end{frame}
 
 \begin{frame}{Photomask}
-\begin{center}
-\includegraphics[height=0.8\textheight]{images/20181207_113845_Burst01.jpg}
-\end{center}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/20181207_113845_Burst01.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Photomask}
@@ -394,10 +392,10 @@
 \end{frame}
 
 \begin{frame}{Photo resist (HKUST)}
-\begin{center}
-\includegraphics[height=0.8\textheight]{images/20181128_154907.jpg}
-\includegraphics[height=0.8\textheight]{images/20181128_154911.jpg}
-\end{center}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/20181128_154907.jpg}
+		\includegraphics[height=0.8\textheight]{images/20181128_154911.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Photo resist (HKUST)}
@@ -415,39 +413,39 @@
 \end{frame}
 
 \begin{frame}{After exposure}
-\begin{center}
-\includegraphics[height=0.8\textheight]{images/20181210_125830_Burst01.jpg}
-\includegraphics[height=0.8\textheight]{images/20181210_125845.jpg}
-\end{center}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/20181210_125830_Burst01.jpg}
+		\includegraphics[height=0.8\textheight]{images/20181210_125845.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Alignment}
-\begin{center}
-\includegraphics[height=0.8\textheight]{images/20181211_125918.jpg}
-\includegraphics[height=0.8\textheight]{images/20181211_161801_Burst01.jpg}
-\end{center}
+	\begin{center}
+		\includegraphics[height=0.8\textheight]{images/20181211_125918.jpg}
+		\includegraphics[height=0.8\textheight]{images/20181211_161801_Burst01.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
-\begin{center}
-	\includegraphics[width=\textwidth]{images/Screenshot_20181219_184458.png}
-\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/Screenshot_20181219_184458.png}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
-\begin{center}
-	\textbf{Wells (nwell/pwell):}
+	\begin{center}
+		\textbf{Wells (nwell/pwell):}
 
-	\includegraphics[width=\textwidth]{images/Screenshot_20181221_124540.png}
-\end{center}
+		\includegraphics[width=\textwidth]{images/Screenshot_20181221_124540.png}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
-\begin{center}
-	\textbf{Wells (nwell/pwell):}
+	\begin{center}
+		\textbf{Wells (nwell/pwell):}
 
-	\includegraphics[width=0.25\textwidth]{images/20181214_125705.jpg}
-\end{center}
+		\includegraphics[width=0.25\textwidth]{images/20181214_125705.jpg}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
@@ -530,25 +528,117 @@
 \end{frame}
 
 \begin{frame}{The Fick's equation}
-\begin{center}
-	\begingroup
-	\huge
-	$N(x,t)=\frac{Q}{\sqrt{\pi \cdot D_e \cdot t}} \cdot \exp\left(\frac{-x^2}{4 \cdot D_e \cdot t}\right)$
-	\endgroup
-\end{center}
+	\begin{center}
+		\begingroup
+		\huge
+		$N(x,t)=\frac{Q}{\sqrt{\pi \cdot D_e \cdot t}} \cdot \exp\left(\frac{-x^2}{4 \cdot D_e \cdot t}\right)$
+		\endgroup
+	\end{center}
 \end{frame}
 
 \begin{frame}{The Fick's equation}
-\begin{center}
-\end{center}
+	\begin{center}
+		For the concentration within the channel may $x=0$
+
+		This results in the concentration at the surface (around 100nm deep $\ll$ 2 microns)
+
+		$ N = \frac{Q}{\sqrt{\pi \cdot D_e \cdot t}} $
+
+		Or the implant dosage:
+
+		$ Q = N \cdot \sqrt{\pi \cdot D_e \cdot t} $
+	\end{center}
+\end{frame}
+
+\begin{frame}{The Fick's equation}
+	\begin{center}
+		Fixed source diffusion:
+
+		$ x_j = 2 \cdot\sqrt{D \cdot t \cdot \ln\left(\frac{N_0}{N_B}\right)} $
+
+		\includegraphics[width=0.25\textwidth]{images/well_formation1.png}
+		\includegraphics[width=0.25\textwidth]{images/well_formation2.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Threshold calculation}
+	\begin{center}
+		\textbf{PMOS}
+
+		\begin{tikzpicture}[node distance = 3cm, auto, thick, scale=0.75, every node/.style={transform shape}]
+			\input{pmos.tex}
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Threshold calculation}
+	\begin{center}
+		\textbf{PMOS}
+
+		\begin{equation}
+			\left| \phi_F \right| = V_T \ln\frac{N_d}{n_i}
+		\end{equation}
+
+		\begin{equation}
+			V_T
+			=
+			V_{FB}
+			-
+			2 \cdot \left| \phi_F \right|
+			-
+			\frac{
+			\sqrt{2 \cdot \epsilon_s  \cdot q \cdot N_d \cdot \left( 2 \cdot \left| \phi_F \right| - V_{SB}\right) }
+			}{C_{ox}}
+		\end{equation}
+
+		\begin{equation}
+			V_{FB} = -\left( \frac{E_g}{2} - \phi_F \right) - \frac{Q_{SS}}{C_{ox}}
+		\end{equation}
+
+	\end{center}
+\end{frame}
+
+\begin{frame}{Threshold calculation}
+	\begin{center}
+		\textbf{NMOS}
+
+		\begin{tikzpicture}[node distance = 3cm, auto, thick, scale=0.75, every node/.style={transform shape}]
+			\input{nmos.tex}
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Threshold calculation}
+	\begin{center}
+		\textbf{NMOS}
+
+		\begin{equation}
+			\phi_F = V_T \ln\frac{N_a}{n_i}
+		\end{equation}
+
+		\begin{equation}
+			V_T
+			=
+			V_{FB}
+			+
+			2 \cdot \phi_F
+			+
+			\frac{\sqrt{2 \cdot \epsilon_s  \cdot q \cdot N_a \cdot \left( 2 \cdot \phi_F + V_{SB} \right) }}{C_{ox}}
+		\end{equation}
+
+		\begin{equation}
+			V_{FB} = -\left( \frac{E_g}{2} + \phi_F \right) - \frac{Q_{SS}}{C_{ox}}
+		\end{equation}
+
+	\end{center}
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
-\begin{center}
-	\textbf{Isolation (STI):}
+	\begin{center}
+		\textbf{Isolation (STI):}
 
-	\includegraphics[width=\textwidth]{images/Screenshot_20181220_164222.png}
-\end{center}
+		\includegraphics[width=\textwidth]{images/Screenshot_20181220_164222.png}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
@@ -606,7 +696,99 @@
 		\item Dip into HF:DI (1:10) water solution for a few seconds until Titanium is gone
 		\item Dip into FeCl3 or other suitable Aluminum etchant for around 30 seconds until Aluminum is gone
 	\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: NOR3 ring oscillator}
+	\textbf{Passivation/Isolation materials}
+
+	\begin{itemize}
+		\item Low temperature oxide (LTO)
+		\item Phosphosilicate glass (PSG)
+	\end{itemize}
 	
+	\textbf{Can both be wet or dry etched}
+\end{frame}
+
+\begin{frame}{Example: NOR3 ring oscillator}
+	\textbf{Passivation/Isolation conceptional}
+
+	\begin{center}
+		\begin{tikzpicture}[node distance = 3cm, auto, thick, scale=0.25, every node/.style={transform shape}]
+			\input{tikz_process_steps/metal.a.tex}
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Example: NOR3 ring oscillator}
+	\textbf{Passivation/Isolation in reality}
+
+	\begin{center}
+		\includegraphics[width=0.25\textwidth]{images/20181220_122500_Burst01.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Example: NOR3 ring oscillator}
+	\textbf{Passivation/Isolation}
+
+	\begin{center}
+		\includegraphics[width=0.25\textwidth]{images/20181220_124056.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Example: NOR3 ring oscillator}
+	\textbf{Passivation/Isolation}
+
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{images/20181220_124600.jpg}
+		\includegraphics[width=0.4\textwidth]{images/20181220_124638_Burst01.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Next}
+	\begin{center}
+		\includegraphics[width=0.25\textwidth]{images/20181210_161139.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Next}
+	\textbf{Victor and I build}
+	\cjkfont {
+	\begin{enumerate}
+		\item North Point MCU (北角芯片)
+		\item Sau Mau Ping SoC (秀茂坪芯片)
+	\end{enumerate}
+	}
+\end{frame}
+
+\begin{frame}{North Point}
+	\textbf{Features}
+
+	\begin{itemize}
+		\item RISC-V core
+		\item 32 bit
+		\item Pin compatible to ATMega8
+		\item Same features as ATMega8
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{North Point}
+	\begin{center}
+		\begingroup
+		\huge
+		\textbf{Survey}
+
+		\url{https://survey.libresilicon.com}
+		\endgroup
+	\end{center}
+\end{frame}
+
+\begin{frame}{Thanks!}
+	\begin{center}
+		\textbf{\cjkfont{非常感谢你们!}} \\
+		\textbf{Thank you very much!} \\
+		\textbf{Vielen herzlichen Dank!} \\
+		\includegraphics[width=100pt]{images/cat.png}
+	\end{center}
 \end{frame}
 
 \end{document}
