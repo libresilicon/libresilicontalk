@@ -554,6 +554,16 @@
 	\begin{center}
 		\textbf{PMOS}
 
+		\begin{tikzpicture}[node distance = 3cm, auto, thick, scale=0.75, every node/.style={transform shape}]
+			\input{pmos.tex}
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Threshold calculation}
+	\begin{center}
+		\textbf{PMOS}
+
 		\begin{equation}
 			\left| \phi_F \right| = V_T \ln\frac{N_d}{n_i}
 		\end{equation}
@@ -566,13 +576,24 @@
 			2 \cdot \left| \phi_F \right|
 			-
 			\frac{
-			\sqrt{2 \cdot \epsilon_s \cdot 2 \cdot \left| \phi_F \right| \cdot q \cdot N_d }
+			\sqrt{2 \cdot \epsilon_s  \cdot q \cdot N_d \cdot \left( 2 \cdot \left| \phi_F \right| - V_{SB}\right) }
 			}{C_{ox}}
 		\end{equation}
 
 		\begin{equation}
-			V_T = V_FB - abs{2 \phi_F}
+			V_{FB} = -\left( \frac{E_g}{2} - \phi_F \right) - \frac{Q_{SS}}{C_{ox}}
 		\end{equation}
+
+	\end{center}
+\end{frame}
+
+\begin{frame}{Threshold calculation}
+	\begin{center}
+		\textbf{NMOS}
+
+		\begin{tikzpicture}[node distance = 3cm, auto, thick, scale=0.75, every node/.style={transform shape}]
+			\input{nmos.tex}
+		\end{tikzpicture}
 	\end{center}
 \end{frame}
 
@@ -588,17 +609,16 @@
 			V_T
 			=
 			V_{FB}
-			-
-			2 \cdot \left| \phi_F \right|
-			-
-			\frac{
-			\sqrt{2 \cdot \epsilon_s \cdot 2 \cdot \left| \phi_F \right| \cdot q \cdot N_d }
-			}{C_{ox}}
+			+
+			2 \cdot \phi_F
+			+
+			\frac{\sqrt{2 \cdot \epsilon_s  \cdot q \cdot N_a \cdot \left( 2 \cdot \phi_F + V_{SB} \right) }}{C_{ox}}
 		\end{equation}
 
 		\begin{equation}
-			V_T = V_FB - abs{2 \phi_F}
+			V_{FB} = -\left( \frac{E_g}{2} + \phi_F \right) - \frac{Q_{SS}}{C_{ox}}
 		\end{equation}
+
 	\end{center}
 \end{frame}
 
