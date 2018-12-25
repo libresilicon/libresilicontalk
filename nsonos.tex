@@ -1,0 +1,42 @@
+\fill[isolationoxide] (0,0.75) rectangle (10,3);
+
+% substrate
+\fill[substrate] (0,0) rectangle (10,2);
+\node at (2,0.5) {Silicon substrate};
+% p-well
+\fill[pwell] (1,0.75) rectangle (8.5,2);
+\node at (5.75,1) {P-Well};
+% body
+\fill[pimplant] (1.5,1) rectangle (3,2);
+\node at (2,1.5) {p+};
+% source
+\fill[nimplant] (3.5,1) rectangle (5,2);
+\node at (4,1.5) {n+};
+% drain
+\fill[nimplant] (6.5,1) rectangle (8,2);
+\node at (7,1.5) {n+};
+%% gate:
+
+\fill[metal1] (5.5,2.2) rectangle (6,3);
+\fill[metal1] (5.3,3) rectangle (6.2,3.2); % connection pad VG
+
+% gate oxide
+\fill[gateoxide] (4.8,2) rectangle (6.7,2.1);
+\fill[nitride] (4.8,2.1) rectangle (6.7,2.2);
+\fill[gateoxide] (4.8,2.2) rectangle (6.7,2.3);
+\fill[poly] (4.8,2.3) rectangle (6.7,2.6);
+
+% metal source
+\fill[metal1] (4,2) rectangle (4.5,3);
+\fill[metal1] (3.75,3) rectangle (4.75,3.2);
+
+\fill[metal1] (2,2) rectangle (2.5,3);
+\fill[metal1] (1.75,3) rectangle (2.75,3.2);
+
+\fill[metal1] (7,2) rectangle (7.5,3);
+\fill[metal1] (6.8,3) rectangle (7.7,3.2); % connection pad VDD
+
+\node at (2.2,3.5) {Bulk};
+\node at (4.2,3.5) {Source};
+\node at (5.5,3.4) {Gate};
+\node at (7.5,3.4) {Drain};

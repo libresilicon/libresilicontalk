@@ -310,6 +310,43 @@
 
 \section[Process]{}
 
+\begin{frame}{Why Hong Kong?}
+	\begin{center}
+		 \textbf{History}
+
+		\includegraphics[height=0.7\textheight]{images/15443222_1411927645507464_7594635994572097245_o.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Why Hong Kong?}
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{images/u=3232688716,3661225619&fm=26&gp=0.jpg}
+		
+		\textbf{Nano fabrication facility}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Why Hong Kong?}
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{images/RCL.jpg}
+		\includegraphics[width=0.4\textwidth]{images/factory.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Why Hong Kong?}
+	\textbf{Conclusion}
+	\begin{itemize}
+		\item Advanced labs available for R\&D
+		\item Shenzhen and Hong Kong have fabs which are willing to introduce LibreSilicon
+		\item Climate is better
+		\item Payment is better
+		\item Food is better
+		\item * is better
+		\item Channels for easy export to Europe already established (One belt, one road)
+		\item The sun shines brightest in the east ;-)
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{Features}
 	\begin{itemize}
         \setlength\itemsep{1em}
@@ -329,7 +366,8 @@
 		\item Robust
 		\item Low amount of layers
 		\item KISS (Keep it simple and stupid)
-		\item Avoid expensive machines (can be manufactured in a home lab)
+		\item Avoid expensive machines
+		\item Can be manufactured in a home lab
 	\end{itemize}
 \end{frame}
 
@@ -633,6 +671,39 @@
 	\end{center}
 \end{frame}
 
+\begin{frame}{SONOS flash}
+	\begin{center}
+		\textbf{Stands for} \\
+		\textbf{S}ilicon \\
+		\textbf{O}xide \\
+		\textbf{N}itride \\
+		\textbf{O}xide \\
+		\textbf{S}ilicon \\
+    \end{center}
+\end{frame}
+
+\begin{frame}{SONOS flash}
+	\begin{center}
+        \textbf{SONOS NMOS}
+
+        \begin{tikzpicture}[node distance = 3cm, auto, thick, scale=0.75, every node/.style={transform shape}]
+			\input{nsonos.tex}
+		\end{tikzpicture}
+	\end{center}
+\end{frame}
+
+\begin{frame}{SONOS flash}
+	\textbf{SONOS NMOS}
+
+	\begin{itemize}
+		\item Programming/Erasing happens by changing $Q_{SS}$
+		\item A variation of $Q_{SS}$ shifts the threshold voltage
+		\item $Q_{SS}$ can be changed by applying an enough high voltage between bulk and gate (approx. 20 V)
+		\item High enough voltage tunnels electrons into the nitride
+		\item Shifting the threshold voltage away from 0.8 V / -0.8 V makes it stay turned off when a "1" is applied
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{Example: NOR3 ring oscillator}
 	\begin{center}
 		\textbf{Isolation (STI):}
@@ -720,6 +791,14 @@
 \end{frame}
 
 \begin{frame}{Example: NOR3 ring oscillator}
+	\textbf{Passivation/Isolation layout}
+
+	\begin{center}
+		\includegraphics[width=\textwidth]{images/Screenshot_20181225_081522.png}
+	\end{center}
+\end{frame}
+
+\begin{frame}{Example: NOR3 ring oscillator}
 	\textbf{Passivation/Isolation in reality}
 
 	\begin{center}
@@ -744,6 +823,16 @@
 	\end{center}
 \end{frame}
 
+\begin{frame}{Example: NOR3 ring oscillator}
+	\textbf{Passivation/Isolation}
+
+	\begin{itemize}
+		\item 1 micron is not enough
+		\item 2 more microns need to be deposited
+		\item Can be then be etched with BOE after exposure and development
+	\end{itemize}
+\end{frame}
+
 \begin{frame}{Next}
 	\begin{center}
 		\includegraphics[width=0.25\textwidth]{images/20181210_161139.jpg}
@@ -751,16 +840,20 @@
 \end{frame}
 
 \begin{frame}{Next}
-	\textbf{Victor and I build}
 	\cjkfont {
+	\large{Victor and I}
 	\begin{enumerate}
-		\item North Point MCU (北角芯片)
-		\item Sau Mau Ping SoC (秀茂坪芯片)
+		\item Finish debugging all the features of 珠江芯片一号
+		\item Create preliminary Verilog and Spice models
+		\item Autogenerating standard cells with Hagens scripts
+		\item Building ADCs and all the other analog stuff
+		\item Build the North Point MCU (北角芯片)
+		\item Build the Sau Mau Ping SoC (秀茂坪芯片)
 	\end{enumerate}
 	}
 \end{frame}
 
-\begin{frame}{North Point}
+\begin{frame}{North Point \cjkfont(北角芯片)}
 	\textbf{Features}
 
 	\begin{itemize}
@@ -771,7 +864,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{North Point}
+\begin{frame}{North Point \cjkfont(北角芯片)}
 	\begin{center}
 		\begingroup
 		\huge
