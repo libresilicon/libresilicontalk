@@ -18,10 +18,10 @@
 }
 \usepackage[digital,srcmeas,semicon]{circdia}
 
-%\usepackage{pgfplots}
+\usepackage{pgfplots}
 %\pgfplotsset{compat=1.16}
-%\usepackage{fontspec}
-%\newfontfamily\cjkfont{Noto Serif SC Black} % Or any appropriate font you have
+\usepackage{fontspec}
+\newfontfamily\cjkfont{Noto Serif SC Black} % Or any appropriate font you have
 
 \input{global_color_scheme.tex}
 \input{tikz_process_steps/contsts.tex}
@@ -40,50 +40,50 @@
 %\end{frame}
 
 \section[Introduction]{}
-\begin{frame}{The LibreSilicon Project}
+\begin{frame}{The LibreSilicon project}
 	\begin{itemize}
 %        \setlength\itemsep{1em}
-		\item in 2017 leviathanch already find a Clean Room to rent at Hong Kong University of Science and Technology
-		\item last year at 34c3 he gave a Lightning Talk about LibreSilicon
-		\item since than we meeting us every week on Sunday 2100 HKT at Mumble
-		\item communicating, planing and working via Mailing List and Mumble
-		\item hold a Tool Chain Hackathon End of May 2018
-		\item already two of us got qualification for Clean Room access at HKUST
-		\item processing our first Test Wafer for characterization ($\rightarrow$ Pics follow)
+		\item In 2017 leviathan already has found a clean room to rent at Hong Kong University of Science and Technology
+		\item Last year at 34c3 he gave a Lightning Talk about LibreSilicon
+		\item Since then we're meeting every week on Sunday 2100 HKT at Mumble
+		\item Communicating, planing and working via mailing list and Mumble
+		\item Held a tool chain hackathon end of May 2018
+		\item Already two of us got qualification for clean room access at HKUST
+		\item Processing our first test wafer for characterization ($\rightarrow$ pics follow)
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Basic Points}
+\begin{frame}{Basic points}
 	\begin{itemize}
         \setlength\itemsep{1em}
-		\item Starting with 1$\mu m$ "Feature Size" while still well documented in Text Books
-		\item Robust, at least 5Volt tolerant, well suited for Maker, Tinkerer and Hacker
-		\item Twin-Well Process for CMOS with 3 Metal Layer w/ very interesting Additions
-		\item quite suitable for "low tec" in the basement
-		\item for Analog Circuits, regarding their huge transistor sizes, small Feature Sizes does not matter
+		\item Starting with 1$\mu m$ "feature size" because still well documented in text books
+		\item Robust, at least 5 Volt tolerant, well suited for maker, tinkerer and hacker
+		\item Twin-Well process for CMOS with 3 metal layer w/ very interesting additions
+		\item Quite suitable for "low tec" in the basement
+		\item For analog circuits, regarding their huge transistor sizes, small feature sizes do not matter
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Main (Re-)Construction Areas}
+\begin{frame}{Main (re-)construction areas}
 	\begin{enumerate}
-		\item figure out / develop the Process itself ($\rightarrow$ almost done)
-		\item rebuild / modernize the Tools / Design Flow ($\rightarrow$ ongoing)
-		\item compile / design a almost complete Standard Cell Library ($\rightarrow$ ongoing)
+		\item Figure out / develop the process itself ($\rightarrow$ almost done)
+		\item Rebuild / modernize the tools / design flow ($\rightarrow$ ongoing)
+		\item Compile / design a almost complete standard cell library ($\rightarrow$ ongoing)
 	\end{enumerate}
 \end{frame}
 
-\section[Standard Cells]{}
+\section[Standard cells]{}
 \begin{frame}{Standard Cells}
 Standard Cells are usualy
 	\begin{itemize}
         \setlength\itemsep{1em}
-		\item a collection of some dozens of combinatorial + sequential cells
-		\item instantiated many, many times in a netlist
-		\item used as layout primitives also
+		\item A collection of some dozens of combinatorial + sequential cells
+		\item Instantiated many, many times in a netlist
+		\item Used also as layout primitives
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Typical Cells}
+\begin{frame}{Typical cells}
 	\begin{figure}[h]
 		\begin{center}
 			\begin{circuitdiagram}{25}{25}
@@ -106,56 +106,58 @@ Standard Cells are usualy
 ... and much more
 \end{frame}
 
-\begin{frame}{Design Goals}
+\begin{frame}{Design goals}
 here are
 	\begin{itemize}
         \setlength\itemsep{1em}
-		\item being almost complete (more cells $\rightarrow$ better netlist)
-		\item being low energy consuming (less Watts per Square)
-		\item being fast as possible (w/ small timing delay)
-		\item having a small Footprint (small Cell Size)
+		\item Being almost complete (more cells $\rightarrow$ better netlist)
+		\item Being low energy consuming (less Watts per square)
+		\item Being as fast as possible (w/ small timing delay)
+		\item Having a small footprint (small cell size)
 	\end{itemize}
 
 Well, does not fit all together well.
 \end{frame}
 
-\begin{frame}{Cell Representations}
+\begin{frame}{Cell representations}
 every single cell needs different representation for working smooth with different tools, e.g.
 	\begin{itemize}
-		\item for Simulation ($\rightarrow$ Verilog and Spice)
-		\item for Synthesis ($\rightarrow$ Liberty File Format)
-		\item for Timing ($\rightarrow$ Standard Delay Format)
-		\item for Layout ($\rightarrow$ Library Exchange Format)
-		\item or, even for dedicated Tools (e.g. Magic)
-		\item and Documentation (Schematics, Truth Tables, Data Sheets, ..)
+		\item For simulation ($\rightarrow$ Verilog and Spice)
+		\item For synthesis ($\rightarrow$ Liberty file format)
+		\item For timing ($\rightarrow$ standard delay format)
+		\item For layout ($\rightarrow$ library exchange format)
+		\item Or, even for dedicated tools (e.g. Magic)
+		\item And documentation (schematics, truth tables, data sheets, ..)
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Cell Representations}
-Regarding our goal of several hundreds cells (estimated 300+),
-generating \textbf{all} Cell Representations, becomes a huge task.
+\begin{frame}{Cell representations}
+Regarding our goal of several hundreds cells (estimated 300+), generating \textbf{all} cell representations, becomes a huge task.
 
+Nobody likes to do this manually.
 
-Nobody like to do this manually.
+We need a tool for that!
 
+A cell generator.
 
-We need a Tool for that! A Cell Generator.
 \end{frame}
 
-\begin{frame}{Cell Generator}
-This Cell Generator, named "Popcorn", is still Work-in-Progress.
-Starting from one Source this tool
+\begin{frame}{Cell generator}
+This cell generator, named "Popcorn", is still work-in-progress.
+
+Starting from one source this tool
+
 	\begin{itemize}
-		\item (should) generating all representation formats
-		\item (already) helps drawing the Schematics
-		\item (already) generates a couple of Data-Sheet like LaTeX file
-		\item was written in Tcl first, but
-		\item needs a Rewriting in a more sophisticated / AI-ish language
-		\item now when Test Wafer Characterization is done
+		\item Should generate all representation formats
+		\item Already helps drawing the schematics
+		\item Already generates a couple of data sheet like LaTeX file
+		\item Was written in Tcl first, but
+		\item Needs a rewrite in a more sophisticated / AI-ish language
+		\item Now when test wafer characterization is done
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Standard Cell Library}
+\begin{frame}{Standard cell library}
 	\begin{itemize}
         \setlength\itemsep{1em}
 		\item https://www.github.com/chipforge/StdCellLib ($\rightarrow$ repository)
@@ -165,8 +167,8 @@ Starting from one Source this tool
 maintained by chipforge
 \end{frame}
 
-\section[Silicon Compiler]{}
-\begin{frame}{Open Source Tools}
+\section[Silicon compiler]{}
+\begin{frame}{Open source tools}
 	\begin{itemize}
         \setlength\itemsep{1em}
 		\item yosys
@@ -179,7 +181,7 @@ maintained by chipforge
 \begin{frame}{graywolf}
 	\begin{itemize}
         \setlength\itemsep{1em}
-		\item Originates in Academia: TimberWolf
+		\item Originates in academia: TimberWolf
 		\item Simulated annealing
 	        \begin{itemize}
 		    \item Meta heuristic that is useful not only for placement
@@ -205,15 +207,15 @@ maintained by chipforge
 	        \end{itemize}
 		\item Difficult to prove formal correctness
 	        \begin{itemize}
-		    \item Prove that C implementation of Rip-up and Re-route is correct
+		    \item Prove that C implementation of rip-up and re-route is correct
 	        \end{itemize}
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Productive Tools}
+\begin{frame}{Productive tools}
 	\begin{itemize}
         \setlength\itemsep{1em}
-		\item Different tool sets like BonnRoute, Cadence Suite, Alliance tools, etc.
+		\item Different tool sets like BonnRoute, Cadence suite, Alliance tools, etc.
 		\item Similar capabilities with respect to silicon
 		\item Just throw man-power at VLSI --- what is automation?
 	\end{itemize}
@@ -228,7 +230,7 @@ maintained by chipforge
 \end{frame} 
 }
 
-\begin{frame}{Routing: State of the Art}
+\begin{frame}{Routing: State of the art}
 	\begin{itemize}
         \setlength\itemsep{1em}
 		\item Place components for a large chip
@@ -470,11 +472,11 @@ maintained by foshardware
 	\begin{itemize}
 		\item Advanced labs available for R\&D
 		\item Shenzhen and Hong Kong have fabs which are willing to introduce LibreSilicon
+		\item Channels for easy export to Europe already established (One belt, one road)
 		\item Climate is better
 		\item Payment is better
 		\item Food is better
 		\item * is better
-		\item Channels for easy export to Europe already established (One belt, one road)
 		\item The sun shines brightest in the east ;-)
 	\end{itemize}
 \end{frame}
